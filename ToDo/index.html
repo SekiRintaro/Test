@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale-1">
+    <title>Vue.js 3</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <h2 class="heading1" data-en="TODOList">うんこ管理アプリ</h2>
+        <div class="note">
+            <form v-on:submit.prevent>
+                <div class="cp_iptxt">
+                    <input class="ef" type="text" v-model="newItem" placeholder="">
+                    <label>どんなうんこか入力してください</label>
+                    <span class="focus_line"></span>
+                </div>
+                <button class="Add" v-on:click="addItem">うんこ追加</button>
+            </form>
+            <ul>
+                <li v-for="(todo, index) in todos" >
+                    <input type="checkbox" v-model="todo.isDone">
+                    <span v-bind:class="{ done: todo.isDone}">
+                        {{ todo.item }}
+                        <span v-if="todo.item === '金のうんこ'" ><img class="toire" v-if: v-bind:src="goldunko" ></span>
+                        <span v-else-if="todo.isDone" ><img class="toire" v-if: v-bind:src="toire" ></span>
+                        <span v-else ><img class="toire" v-if: v-bind:src="unko" ></span>
+                    </span>
+                    <button class="Del" v-on:click="deleteItem(index)">流す</button>
+                </li>
+            </ul>
+        </div>
+        <!-- <pre>{{ $data }}</pre> -->
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

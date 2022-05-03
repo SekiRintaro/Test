@@ -1,0 +1,217 @@
+body {
+    background-color: #fff;
+    /* 背景色 */
+    background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #fff 50%, #fff 100%),
+        /* 点線1の色 */
+        linear-gradient(180deg, #ccc 1px, transparent 1px);
+    /* 点線2の色と太さ */
+    background-size: 8px 100%,
+        /* 点線1のサイズ */
+        100% 2.5em;
+    /* 点線2のサイズ */
+    line-height: 2.5em;
+    /* 文字の高さ */
+    padding-bottom: 1px;
+    /* 最終行の下にも罫線を引く */
+}
+
+
+.toire {
+    height: 40px;
+    width: 40;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+.heading1 {
+    color: #5a3105;
+    /*文字色*/
+    border: solid 3px #364e96;
+    /*線色*/
+    padding: 0.2em;
+    /*文字周りの余白*/
+    border-radius: 0.5em;
+    /*角丸*/
+    position: relative;
+    padding-top: 40px;
+    padding-left: 30px;
+    font-size: 40px;
+}
+
+.heading1 span {
+    position: relative;
+    z-index: 2;
+}
+
+.heading1::before {
+    content: attr(data-en);
+    position: absolute;
+    transform: rotate(-5deg);
+    top: -10px;
+    left: 0;
+    color: rgba(181, 198, 227, 0.6);
+    font-size: 80px;
+    font-weight: 400;
+    font-family: luxus-brut, cursive;
+    font-style: italic;
+}
+
+#app ul {
+    list-style: none;
+}
+
+#app li>span.done {
+    text-decoration: line-through;
+}
+
+ul,
+ol {
+    padding: 0;
+    position: relative;
+}
+
+ul li,
+ol li {
+    color: #5a3105;
+    border-left: solid 6px #2d8fdd;
+    /*左側の線*/
+    background: #f1f8ff;
+    /*背景色*/
+    margin-bottom: 10px;
+    /*下のバーとの余白*/
+    line-height: 1.5;
+    padding: 0.5em;
+    list-style-type: none !important;
+    /*ポチ消す*/
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.cp_iptxt {
+    position: relative;
+    width: 80%;
+    margin: 20px 3%;
+    font-size: 20px;
+}
+
+.cp_iptxt input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 4em;
+}
+
+.cp_iptxt input[type='text']:focus {
+    outline: none;
+}
+
+.ef {
+    padding: 4px 0;
+    border: 0;
+    border-bottom: 1px solid #1b2538;
+    background-color: transparent;
+}
+
+.ef~.focus_line {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.ef~.focus_line:before,
+.ef~.focus_line:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    content: '';
+    transition: 0.4s;
+    background-color: #280fcb;
+}
+
+.ef~.focus_line:after {
+    right: 0;
+    left: auto;
+}
+
+.ef:focus~.focus_line:before,
+.ef:focus~.focus_line:after,
+.cp_iptxt.ef~.focus_line:before,
+.cp_iptxt.ef~.focus_line:after {
+    width: 50%;
+    transition: 0.4s;
+}
+
+.ef~label {
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    color: #aaaaaa;
+}
+
+.ef:focus~label,
+.cp_iptxt.ef~label {
+    font-size: 12px;
+    top: -16px;
+    transition: 0.3s;
+    color: #280fcb;
+}
+
+.Add {
+    display: inline-block;
+    border-radius: 8%;
+    /* 角丸       */
+    font-size: 10pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 12px;
+    /* 余白       */
+    background: #ababff;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: .3s;
+    /* なめらか変化 */
+    box-shadow: 6px 6px 3px #666666;
+    /* 影の設定 */
+    border: 2px solid #ababff;
+    /* 枠の指定 */
+}
+
+.Del {
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 10%;
+    /* 角丸       */
+    font-size: 8pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 12px;
+    /* 余白       */
+    background: #589fd8;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: .3s;
+    /* なめらか変化 */
+}
